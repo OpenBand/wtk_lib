@@ -10,13 +10,13 @@ class WGui:
    @staticmethod
    def debug(data):
       if get_bool_environ('WCONFIG_DEBUG'):
-         click.echo(click.style(">> {}".format(data), fg='white'))
+         click.echo(click.style(">> {}".format(data), fg='white'), err=True)
       else:
          pass
 
    @staticmethod
    def message(text: str):
-      click.echo(click.style("* {}\n".format(text), fg='bright_white'))
+      click.echo(click.style("* {}\n".format(text), fg='bright_white'), err=True)
 
    @staticmethod
    def echo(text: str, **kwargs):
@@ -26,15 +26,15 @@ class WGui:
 
    @staticmethod
    def ok(text: str):
-      click.echo(click.style(text, fg='green'))
+      click.echo(click.style(text, fg='green'), err=True)
 
    @staticmethod
    def warning(text: str):
-      click.echo(click.style(text, fg='yellow'))
+      click.echo(click.style(text, fg='yellow'), err=True)
 
    @staticmethod
    def error(text: str):
-      click.echo(click.style(text, fg='red'))
+      click.echo(click.style(text, fg='red'), err=True)
       
    @staticmethod
    def print(text: str, f=sys.stdout):
